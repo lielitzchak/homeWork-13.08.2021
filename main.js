@@ -27,7 +27,7 @@ const student = {
   lName: "itzchak",
   phone: 972547080093,
   eMaile: "liel.izcha321@gmail.com",
-  scores: [1,10],
+  scores: [10, 20, 30, 40, 50, 60, 5, 3, 1, 70, 80, 90],
   nameAmeLastName: function () {
     return this.fName + " " + this.lName;
   },
@@ -39,23 +39,25 @@ const student = {
     return sum;
   },
   LowScore: function () {
-    let min = student.scores[i];
+    let lowest = 0;
     for (let i = 0; i < student.scores.length; i++) {
-      for (let j = i + 1; j < student.scores.length; j++) {
-        if (student.scores[i] < student.scores[j]) {
-          min = student.scores[i];
+      for (let j = 0; j < student.scores.length; j++) {
+        if (student.scores[i] < student.scores[lowest]) {
+          lowest = student.scores[i]
         }
       }
+
     }
-    return min;
+    return lowest;
   },
 };
-// console.log(LowScore());
+console.log(student.LowScore());
+
 // console.log(student.fName);
 // console.log(student.lName);
 // console.log(student.phone);
 // console.log(student.eMaile);
 // console.log(student.scores);
-console.log(student.gpa());
+// console.log(student.gpa());
 
 // console.log(student.nameAmeLastName());
